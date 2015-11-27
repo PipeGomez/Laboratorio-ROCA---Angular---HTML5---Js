@@ -47,6 +47,8 @@ public class BlueprintController {
         return services.getBlueprintNames();
     }
     
+    
+    
     @RequestMapping(value = "/{blueprintname}",method = RequestMethod.GET)        
     public Blueprint getABlueprint(@PathVariable("blueprintname") String blueprintname) {       
         return services.getBlueprintByName(blueprintname);

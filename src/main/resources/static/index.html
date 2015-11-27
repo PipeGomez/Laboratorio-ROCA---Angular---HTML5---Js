@@ -6,8 +6,8 @@
         <script src="js/libs/angular-route.js"></script>
         <script src="js/libs/appmodule.js"></script>
         <div>
-			{{seleccionado}}
-		</div>
+            {{seleccionado}}
+        </div>
 
          <link rel="stylesheet" href="css/bootstrap.css">
         <title>Blueprints</title>
@@ -15,17 +15,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body ng-controller="plan_control">
-		<select ng-model="seleccionado">
-			<option  ng-repeat="o in listaPlanos" value="{{o}}"> 
-				{{o}}
-			</option>
-		</select>
+        <select ng-model="seleccionado">
+            <option  ng-repeat="o in listaPlanos" value="{{o}}"> 
+                    {{o}}
+            </option>
+        </select>
 	<button type="button" ng-click="loadData()">Listar</button>
-	<button type="button" ng-click="loadDataSelec()">Puntos</button>
-               
-    <canvas id="myCanvas" width="800" height="600" style="border:1px solid #000000;" ></canvas>    
-	<svg id="mySVG" width="100" height="100">
-    	<circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
-    </svg>     
+	<button type="button" ng-click="loadDataSelec()">Dibujar</button>           
+        <label> Nombre: </label><input id='figuraAdd' name='figuraAdd' type="text" ng-value= "figura1">
+        <button type="button" ng-click="addData()">Agregar</button>
+        <br>
+        
+        <div id="myDiv">
+            <canvas id="myCanvas" width="800" height="600" style="border:1px solid #000000;" ></canvas>
+        </div>
+        <br>
+	<svg id="mySVGs" width="800" height="600">
+            
+        </svg>     
+        
 </body>
 </html>
